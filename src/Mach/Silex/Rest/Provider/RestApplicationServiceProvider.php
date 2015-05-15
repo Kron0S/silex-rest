@@ -12,8 +12,8 @@
 namespace Mach\Silex\Rest\Provider;
 
 use Mach\Silex\Rest\RestService;
-use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\Container as Application;
+use Pimple\ServiceProviderInterface;
 use Silex\ServiceControllerResolver;
 
 class RestApplicationServiceProvider implements ServiceProviderInterface
@@ -28,7 +28,7 @@ class RestApplicationServiceProvider implements ServiceProviderInterface
             $app['rest.methods.' . $method] = $method;
         }
 
-        $app['rest'] = $app->share(function($app){
+        $app['rest'] = $app->factory(function($app){
             return new RestService($app);
         });
     }

@@ -25,7 +25,7 @@ class Resource
         if (is_object($controller)) {
             $controllerClass = static::underscoreDot(get_class($controller));
             
-            $app[$controllerClass] = $app->share(function() use ($controller) {
+            $app[$controllerClass] = $app->factory(function() use ($controller) {
                 return $controller;
             });
 
