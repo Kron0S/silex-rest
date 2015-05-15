@@ -1,5 +1,5 @@
 {
-    "name": "mach/silex-rest",
+    "name": "kron0s/silex-rest",
     "keywords": ["rest", "silex", "crud", "restful", "serviceprovider"],
     "description": "RestApplicationServiceProvider for Silex",
     "homepage": "http://github.com/tiraeth/silex-rest",
@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "silex/silex": "1.0.*@dev"
+        "silex/silex": "~2.0@dev"
     },
     "autoload": {
         "psr-0": { "Mach\\Silex\\Rest\\": "src" }
